@@ -7,7 +7,9 @@
 html, body{
     width: 100%;
     height: 100%;
+    font-family: Cambria;
 }
+
 
 /* Starting CSS */
 #page {
@@ -20,7 +22,33 @@ html, body{
 }
 
 #box {
+    overflow: hidden;
     width: 80%;
     height: 80%;
     background: lavender;
+    border-radius: 20px;
+}
+
+#box_top {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: rgb(156, 156, 224);
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.board {
+    color: red;
+    background-color: white;
+    border-radius: 16px;
+    font-weight: 900;
+    font-size: 25px;
+    padding: 14px 14px;
 }
