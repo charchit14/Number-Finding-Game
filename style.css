@@ -57,14 +57,25 @@ html, body{
     padding: 20px;
     width: 100%;
     height: calc(100% - 80px);
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;    /* To bring the fields on to the next line (by default its value is no-wrap) */
     /* background-color: blue; */
 }
 
 .fields {
     width: 50px;
     height: 50px;
-    background-color: red;
+    background-color: orangered;
     color: white;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+}
 
+.fields:hover {
+    background-color: red;
+    cursor: pointer;
 }
