@@ -28,21 +28,43 @@ function time() {
         }
         else{
             clearInterval(time_rundown);    // The time completely stops after reaching 0
+            // 'Game Over' screen once the time runs out
+            document.querySelector("#box_bottom").innerHTML = `<h1>Game Over! Your total score is: ${points}</h1>`;
         }
     }, 1000);   
 }
 
 
 // Creating Target Number
+var targetNum;
 function newTarget() {
-    var new_number = Math.floor(Math.random()*10)
-    document.querySelector("#target_value").textContent = new_number;
+    targetNum = Math.floor(Math.random()*10)
+    document.querySelector("#target_value").textContent = targetNum;
 }
 
 
+// Creating the points function
+var points = 0;
+function addPoints () {
+    points += 7;
+    document.querySelector("#increase_points").textContent = points;
+}
 
 
+// Clicking the number and checking the clicked number with the target value
+// Selecting the parent element 'box_bottom' instead of adding event listener to all the 112 number-fields
+document.querySelector("#box_bottom").addEventListener("click", 
+function(details){
+    var clickedNum = Number(details.target.textContent);
+    if (clickedNum === targetNum) {
+        addPoints();
+        createNumbers();
+        newTarget();
+    }
+});
 
+
+// Function calls
 createNumbers();
 time();
 newTarget();

@@ -60,6 +60,8 @@ html, body{
     display: flex;
     gap: 20px;
     flex-wrap: wrap;    /* To bring the fields on to the next line (by default its value is no-wrap) */
+    align-items: center;
+    justify-content: center;
     /* background-color: blue; */
 }
 
